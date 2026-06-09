@@ -1,0 +1,42 @@
+{
+  "name": "school-transport-testing-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "React + TypeScript lab for practicing Jest, React Testing Library and Cypress with a school transport dashboard.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --runInBand --coverage",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test \"npm run dev -- --host 127.0.0.1\" http://127.0.0.1:5173 \"npm run cy:run\"",
+    "check": "npm run test:ci && npm run build && npm run test:e2e"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "cypress": "latest",
+    "identity-obj-proxy": "latest",
+    "jest": "latest",
+    "jest-environment-jsdom": "latest",
+    "start-server-and-test": "latest",
+    "ts-jest": "latest"
+  }
+}
