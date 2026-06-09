@@ -1,22 +1,22 @@
 # School Transport Testing Lab
 
-Interface web em React + TypeScript para praticar testes unitários com Jest, testes de componentes com React Testing Library e testes end-to-end com Cypress.
+A modern React + TypeScript web interface designed to practice automated testing with **Jest**, **React Testing Library**, and **Cypress**.
 
-O projeto simula um painel de monitoramento de transporte escolar com dashboard, alunos, rotas e ocorrências. A proposta é servir como laboratório técnico e projeto de portfólio.
+The project simulates a school transportation monitoring dashboard with students, routes, operational indicators, and incident management. Its main goal is to work as both a technical learning lab and a portfolio-ready frontend project.
 
-## Objetivo
+## Purpose
 
-Demonstrar capacidade de:
+This project demonstrates the ability to:
 
-- estruturar uma aplicação frontend com React e TypeScript;
-- separar regra de negócio da camada visual;
-- criar testes unitários com Jest;
-- testar componentes com React Testing Library;
-- validar fluxos reais de usuário com Cypress;
-- organizar documentação técnica;
-- executar testes em pipeline com GitHub Actions.
+- structure a frontend application using React and TypeScript;
+- separate business logic from the user interface layer;
+- write unit tests with Jest;
+- test React components with React Testing Library;
+- validate real user flows with Cypress;
+- organize technical documentation clearly;
+- run automated tests in a CI pipeline with GitHub Actions.
 
-## Stack
+## Tech Stack
 
 - React
 - TypeScript
@@ -26,22 +26,24 @@ Demonstrar capacidade de:
 - Cypress
 - GitHub Actions
 
-## Funcionalidades
+## Features
 
-- Dashboard com indicadores operacionais.
-- Lista de alunos com busca e filtro por status.
-- Detalhamento de rotas.
-- Cadastro de ocorrências com validação.
-- Lista de ocorrências abertas.
-- Layout visual com aparência de SaaS.
+- Operational dashboard with key metrics.
+- Student list with search and status filtering.
+- Route details page.
+- Incident registration form with validation.
+- Open incidents list.
+- Modern SaaS-style visual layout.
 
-## Estratégia de testes
+## Testing Strategy
+
+The project is structured to practice different testing layers in a realistic frontend application.
 
 ### Jest
 
-Usado para testar regras de negócio, funções puras e validações.
+Jest is used to test business rules, pure functions, formatters, filters, and validation logic.
 
-Arquivos principais:
+Main files:
 
 ```txt
 src/tests/filters.test.ts
@@ -51,9 +53,9 @@ src/tests/formatters.test.ts
 
 ### React Testing Library
 
-Usada para testar componentes pelo comportamento visível ao usuário.
+React Testing Library is used to test components through user-visible behavior instead of implementation details.
 
-Arquivos principais:
+Main files:
 
 ```txt
 src/tests/DashboardCard.test.tsx
@@ -62,9 +64,9 @@ src/tests/OccurrenceForm.test.tsx
 
 ### Cypress
 
-Usado para testar fluxos completos no navegador.
+Cypress is used to test complete user flows directly in the browser.
 
-Arquivos principais:
+Main files:
 
 ```txt
 cypress/e2e/dashboard.cy.ts
@@ -73,65 +75,71 @@ cypress/e2e/occurrences.cy.ts
 cypress/e2e/routes.cy.ts
 ```
 
-## Como rodar
+## Getting Started
+
+Install dependencies and start the development server:
 
 ```bash
 npm install
 npm run dev
 ```
 
-A aplicação roda em:
+The application runs at:
 
 ```txt
 http://127.0.0.1:5173
 ```
 
-## Rodar testes unitários
+## Run Unit Tests
 
 ```bash
 npm run test
 ```
 
-## Rodar testes com cobertura
+## Run Test Coverage
 
 ```bash
 npm run test:coverage
 ```
 
-## Abrir Cypress
+## Open Cypress
 
 ```bash
 npm run cy:open
 ```
 
-## Rodar Cypress em modo headless
+## Run Cypress in Headless Mode
 
 ```bash
 npm run test:e2e
 ```
 
-## Rodar verificação completa
+## Run the Full Verification Suite
 
 ```bash
 npm run check
 ```
 
-## Critérios de conclusão do MVP
+## MVP Completion Criteria
 
-- [x] Dashboard com indicadores.
-- [x] Lista de alunos com busca.
-- [x] Filtro por status.
-- [x] Cadastro de ocorrência.
-- [x] Detalhes de rotas.
-- [x] Testes unitários com Jest.
-- [x] Testes de componentes com React Testing Library.
-- [x] Testes E2E com Cypress.
-- [x] Workflow de CI com GitHub Actions.
+- [x] Dashboard with operational indicators.
+- [x] Student list with search.
+- [x] Status-based filtering.
+- [x] Incident registration form.
+- [x] Route details page.
+- [x] Unit tests with Jest.
+- [x] Component tests with React Testing Library.
+- [x] End-to-end tests with Cypress.
+- [x] CI workflow with GitHub Actions.
 
-## Melhorias futuras
+## Future Improvements
 
-- Adicionar login fake.
-- Adicionar MSW para simular API.
-- Adicionar relatório visual de cobertura.
-- Publicar deploy na Vercel.
-- Gravar GIF dos testes rodando para colocar no README.
+- Add a mock authentication flow.
+- Add MSW to simulate API requests.
+- Add a visual test coverage report.
+- Deploy the application on Vercel.
+- Record a short GIF showing the automated tests running.
+
+## Portfolio Value
+
+This project shows practical frontend testing skills in a domain-inspired application instead of a generic demo. It highlights automated testing, UI organization, validation logic, user-flow coverage, and continuous integration in a single repository.
