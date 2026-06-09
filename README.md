@@ -1,20 +1,27 @@
 # School Transport Testing Lab
 
-A modern React + TypeScript web interface designed to practice automated testing with **Jest**, **React Testing Library**, and **Cypress**.
+A learning-focused project designed to practice frontend testing with **Jest**, **React Testing Library**, and **Cypress**.
 
-The project simulates a school transportation monitoring dashboard with students, routes, operational indicators, and incident management. Its main goal is to work as both a technical learning lab and a portfolio-ready frontend project.
+The goal is not to build a production-grade school transportation system. The goal is to create a realistic application that serves as a testing laboratory where different testing techniques, strategies, and tools can be practiced and documented.
 
-## Purpose
+---
 
-This project demonstrates the ability to:
+## Project Goal
 
-- structure a frontend application using React and TypeScript;
-- separate business logic from the user interface layer;
-- write unit tests with Jest;
-- test React components with React Testing Library;
-- validate real user flows with Cypress;
-- organize technical documentation clearly;
-- run automated tests in a CI pipeline with GitHub Actions.
+This repository exists to help practice:
+
+- Unit Testing with Jest
+- Component Testing with React Testing Library
+- End-to-End Testing with Cypress
+- Test organization and maintenance
+- Test coverage analysis
+- Mocking and stubbing
+- API interception
+- CI/CD integration using GitHub Actions
+
+Every implemented feature should contribute to learning one or more testing techniques.
+
+---
 
 ## Tech Stack
 
@@ -26,120 +33,276 @@ This project demonstrates the ability to:
 - Cypress
 - GitHub Actions
 
-## Features
+---
 
-- Operational dashboard with key metrics.
-- Student list with search and status filtering.
-- Route details page.
-- Incident registration form with validation.
-- Open incidents list.
-- Modern SaaS-style visual layout.
+## Planned Application Features
 
-## Testing Strategy
+The application domain is intentionally simple.
 
-The project is structured to practice different testing layers in a realistic frontend application.
+- Dashboard
+- Student Management
+- Route Management
+- Incident Management
 
-### Jest
+These features exist only to provide realistic scenarios for automated tests.
 
-Jest is used to test business rules, pure functions, formatters, filters, and validation logic.
+---
 
-Main files:
+## Project Architecture
 
 ```txt
-src/tests/filters.test.ts
-src/tests/validators.test.ts
-src/tests/formatters.test.ts
+school-transport-testing-lab/
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+│
+├── cypress/
+│   ├── e2e/
+│   │   ├── dashboard.cy.ts
+│   │   ├── students.cy.ts
+│   │   ├── routes.cy.ts
+│   │   └── occurrences.cy.ts
+│   │
+│   ├── fixtures/
+│   │   ├── students.json
+│   │   ├── routes.json
+│   │   └── occurrences.json
+│   │
+│   └── support/
+│       ├── commands.ts
+│       └── e2e.ts
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── layout/
+│   ├── services/
+│   ├── utils/
+│   ├── data/
+│   ├── tests/
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── jest.config.ts
+├── cypress.config.ts
+├── package.json
+└── README.md
 ```
 
-### React Testing Library
+---
 
-React Testing Library is used to test components through user-visible behavior instead of implementation details.
+# Roadmap
 
-Main files:
+## Sprint 0 — Setup and Documentation
 
-```txt
-src/tests/DashboardCard.test.tsx
-src/tests/OccurrenceForm.test.tsx
-```
+### Status
 
-### Cypress
+Completed
 
-Cypress is used to test complete user flows directly in the browser.
+### Tasks
 
-Main files:
+- [x] Create repository
+- [x] Create project structure
+- [x] Configure React + TypeScript + Vite
+- [x] Configure Jest
+- [x] Configure React Testing Library
+- [x] Configure Cypress
+- [x] Configure GitHub Actions
+- [x] Create README
+- [x] Translate README to English
 
-```txt
-cypress/e2e/dashboard.cy.ts
-cypress/e2e/students.cy.ts
-cypress/e2e/occurrences.cy.ts
-cypress/e2e/routes.cy.ts
-```
+---
 
-## Getting Started
+## Sprint 1 — Jest Foundations
 
-Install dependencies and start the development server:
+### Status
 
-```bash
-npm install
-npm run dev
-```
+Not Started
 
-The application runs at:
+### Tasks
 
-```txt
-http://127.0.0.1:5173
-```
+- [ ] Create filterStudentsByName()
+- [ ] Create filterStudentsByStatus()
+- [ ] Create sortStudentsByName()
+- [ ] Create countStudentsByStatus()
+- [ ] Create formatStudentStatus()
+- [ ] Create calculateAttendanceRate()
+- [ ] Create unit tests for all utilities
+- [ ] Create empty list tests
+- [ ] Create invalid value tests
+- [ ] Create test.each() examples
+- [ ] Create beforeEach() examples
+- [ ] Reach 20+ Jest tests
+- [ ] Reach 80%+ coverage
 
-## Run Unit Tests
+---
 
-```bash
-npm run test
-```
+## Sprint 2 — Validation Testing with Jest
 
-## Run Test Coverage
+### Status
 
-```bash
-npm run test:coverage
-```
+Not Started
 
-## Open Cypress
+### Tasks
 
-```bash
-npm run cy:open
-```
+- [ ] Create validateOccurrenceForm()
+- [ ] Validate required student
+- [ ] Validate required type
+- [ ] Validate required description
+- [ ] Validate minimum description length
+- [ ] Validate required priority
+- [ ] Validate allowed status values
+- [ ] Create valid form tests
+- [ ] Create invalid form tests
+- [ ] Create parameterized tests
+- [ ] Reach 15+ validation tests
 
-## Run Cypress in Headless Mode
+---
 
-```bash
-npm run test:e2e
-```
+## Sprint 3 — React Testing Library
 
-## Run the Full Verification Suite
+### Status
 
-```bash
-npm run check
-```
+Not Started
 
-## MVP Completion Criteria
+### Tasks
 
-- [x] Dashboard with operational indicators.
-- [x] Student list with search.
-- [x] Status-based filtering.
-- [x] Incident registration form.
-- [x] Route details page.
-- [x] Unit tests with Jest.
-- [x] Component tests with React Testing Library.
-- [x] End-to-end tests with Cypress.
-- [x] CI workflow with GitHub Actions.
+- [ ] Test DashboardCard
+- [ ] Test StatusBadge
+- [ ] Test StudentTable
+- [ ] Test SearchInput
+- [ ] Test OccurrenceForm
+- [ ] Test click events
+- [ ] Test typing events
+- [ ] Test validation messages
+- [ ] Test empty states
+- [ ] Reach 15+ component tests
 
-## Future Improvements
+---
 
-- Add a mock authentication flow.
-- Add MSW to simulate API requests.
-- Add a visual test coverage report.
-- Deploy the application on Vercel.
-- Record a short GIF showing the automated tests running.
+## Sprint 4 — Cypress Fundamentals
 
-## Portfolio Value
+### Status
 
-This project shows practical frontend testing skills in a domain-inspired application instead of a generic demo. It highlights automated testing, UI organization, validation logic, user-flow coverage, and continuous integration in a single repository.
+Not Started
+
+### Tasks
+
+- [ ] Create dashboard.cy.ts
+- [ ] Create students.cy.ts
+- [ ] Create routes.cy.ts
+- [ ] Create occurrences.cy.ts
+- [ ] Test page navigation
+- [ ] Test dashboard rendering
+- [ ] Test route rendering
+- [ ] Test student rendering
+- [ ] Practice cy.visit()
+- [ ] Practice cy.contains()
+- [ ] Practice cy.url()
+
+---
+
+## Sprint 5 — Cypress User Flows
+
+### Status
+
+Not Started
+
+### Tasks
+
+- [ ] Search students
+- [ ] Filter students
+- [ ] Open route details
+- [ ] Submit occurrence form
+- [ ] Test invalid submission
+- [ ] Test successful submission
+- [ ] Test form reset
+- [ ] Reach 10+ E2E tests
+
+---
+
+## Sprint 6 — Fixtures and Custom Commands
+
+### Status
+
+Not Started
+
+### Tasks
+
+- [ ] Create students fixture
+- [ ] Create routes fixture
+- [ ] Create occurrences fixture
+- [ ] Use cy.fixture()
+- [ ] Create custom commands
+- [ ] Create reusable Cypress helpers
+- [ ] Refactor duplicated tests
+
+---
+
+## Sprint 7 — API Mocking and Intercepts
+
+### Status
+
+Not Started
+
+### Tasks
+
+- [ ] Create service layer
+- [ ] Mock GET students
+- [ ] Mock GET routes
+- [ ] Mock GET occurrences
+- [ ] Mock POST occurrences
+- [ ] Use cy.intercept()
+- [ ] Test loading states
+- [ ] Test error states
+- [ ] Test delayed responses
+
+---
+
+## Sprint 8 — Coverage and CI
+
+### Status
+
+Not Started
+
+### Tasks
+
+- [ ] Run Jest coverage
+- [ ] Run Cypress suite
+- [ ] Run production build
+- [ ] Configure CI workflow
+- [ ] Add status badges
+- [ ] Document testing strategy
+
+---
+
+## Sprint 9 — Testing Challenges
+
+### Status
+
+Not Started
+
+### Tasks
+
+- [ ] Introduce a bug intentionally
+- [ ] Create a failing test
+- [ ] Fix the bug
+- [ ] Create regression tests
+- [ ] Test edge cases
+- [ ] Test invalid routes
+- [ ] Test API failures
+- [ ] Create Testing Notes document
+
+---
+
+## Rule for Repository Maintenance
+
+Whenever a task is completed:
+
+1. Mark the task as completed in this README.
+2. Commit the implementation.
+3. Commit the README update.
+4. Keep sprint progress synchronized with repository status.
+
+The README is the project's source of truth.
