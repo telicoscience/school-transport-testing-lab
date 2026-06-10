@@ -118,11 +118,11 @@ Completed
 
 ### Status
 
-Not Started
+In progress
 
 ### Tasks
 
-- [ ] Create filterStudentsByName()
+- [x] Create filterStudentsByName()
 - [ ] Create filterStudentsByStatus()
 - [ ] Create sortStudentsByName()
 - [ ] Create countStudentsByStatus()
